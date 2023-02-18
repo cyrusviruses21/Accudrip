@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/cover"
+    tools:context=".UserStatus">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="A-RAIN"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <Button
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="status"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        />
+
+    <Button
+        android:id="@+id/report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Report"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="@+id/status"
+        app:layout_constraintLeft_toRightOf="@+id/status"
+        android:layout_marginLeft="5dp"
+        />
+    <Button
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="data"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="@+id/report"
+        app:layout_constraintLeft_toRightOf="@+id/report"
+        android:layout_marginLeft="5dp"
+        />
+
+    <Button
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="profile"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="@+id/data"
+        app:layout_constraintLeft_toRightOf="@+id/data"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/smart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smart Water System"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/title"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        />
+
+    <TextView
+        android:id="@+id/humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HUMIDITY LEVEL"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:background="#00C060"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/humidityIcon"
+        app:layout_constraintStart_toStartOf="@+id/humidityIcon"
+        app:layout_constraintTop_toBottomOf="@+id/humidityIcon"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/waterlevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WATER LEVEL"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:background="#00C060"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/waterlevelIcon"
+        app:layout_constraintStart_toStartOf="@+id/waterlevelIcon"
+        app:layout_constraintTop_toBottomOf="@+id/waterlevelIcon"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:id="@+id/humidityIcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="@+id/smart"
+        app:layout_constraintStart_toStartOf="@+id/smart"
+        app:layout_constraintTop_toBottomOf="@id/smart"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/humid"
+        />
+
+    <ImageView
+        android:id="@+id/waterlevelIcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="@+id/humidity"
+        app:layout_constraintStart_toStartOf="@+id/humidity"
+        app:layout_constraintTop_toBottomOf="@+id/humidity"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/waterlevel"
+        />
+
+    <TextView
+        android:id="@+id/humiditylevelStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HIGH"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/humidityIcon"
+        app:layout_constraintTop_toTopOf="@+id/humidityIcon" />
+
+    <TextView
+        android:id="@+id/waterlevelStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="90%"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/waterlevelIcon"
+        app:layout_constraintTop_toTopOf="@+id/waterlevelIcon" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        app:layout_constraintEnd_toEndOf="@+id/irrigate"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="@+id/irrigate"
+        app:layout_constraintTop_toBottomOf="@+id/irrigate"
+        tools:ignore="UseSwitchCompatOrMaterialXml">
+
+    </Switch>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.646"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waterlevelStatus"
+        app:layout_constraintVertical_bias="0.534" />
+
+    <TextView
+        android:id="@+id/irrigate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/irrigate"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/soilMoisture"
+        app:layout_constraintTop_toBottomOf="@+id/soilMoistureStatus"
+        />
+
+    <ImageView
+        android:id="@+id/soilMoistureIcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/soilmoisture"
+        app:layout_constraintEnd_toEndOf="@+id/waterlevel"
+        app:layout_constraintStart_toStartOf="@+id/waterlevel"
+        app:layout_constraintTop_toBottomOf="@+id/waterlevel"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/soilMoisture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SOIL MOISTURE"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:background="#00C060"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/soilMoistureIcon"
+        app:layout_constraintStart_toStartOf="@+id/soilMoistureIcon"
+        app:layout_constraintTop_toBottomOf="@+id/soilMoistureIcon"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/soilMoistureStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HIGH"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/soilMoistureIcon"
+        app:layout_constraintTop_toTopOf="@+id/soilMoistureIcon" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
