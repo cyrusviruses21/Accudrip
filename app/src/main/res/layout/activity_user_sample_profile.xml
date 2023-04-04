@@ -18,7 +18,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/profilecover"
+            android:background="@drawable/LIGHTBLUE"
             >
 
     <ImageView
@@ -168,8 +168,8 @@
     <Button
         android:id="@+id/back"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:background="@drawable/backgroundniba"
+        android:layout_height="50dp"
+        android:backgroundTint="#8df0c6"
         android:textColor="@color/black"
         android:text="Back to Home"
         app:backgroundTint="@null"
@@ -192,6 +192,7 @@
         android:background="@drawable/btn_background"
         android:text="LOGOUT"
         app:backgroundTint="@null"
+        android:textColor="#3b3939"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
