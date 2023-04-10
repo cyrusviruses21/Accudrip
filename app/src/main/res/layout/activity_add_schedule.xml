@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cover"
+    android:background="@color/white"
     tools:context=".addSchedule">
 
 
@@ -19,7 +19,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/square">
+            android:background="@drawable/light">
 
             <Button
                 android:id="@+id/addSchedule"
@@ -30,6 +30,7 @@
                 android:textColor="@color/black"
                 android:textStyle="italic"
                 app:backgroundTint="@null"
+                android:backgroundTint="#8df0c6"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/editTextNumber2"
                 app:layout_constraintStart_toStartOf="@+id/selectDateTextView3"
@@ -41,28 +42,25 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Accudrip"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="40sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.071" />
+                app:layout_constraintVertical_bias="0.045" />
 
             <TextView
                 android:id="@+id/smart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="SMART WATER SYSTEM"
-                android:textColor="#00C060"
-                android:textSize="15sp"
-                android:textStyle="bold"
-
+                android:text="Drip and Monitor"
+                android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@+id/title"
                 app:layout_constraintStart_toStartOf="@+id/title"
-                app:layout_constraintTop_toBottomOf="@+id/title" />
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                />
 
             <TextView
                 android:id="@+id/selectDateTextView"
@@ -178,6 +176,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/btn_background"
         android:text="back to calendar"
+        android:textColor="#3b3939"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
