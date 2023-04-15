@@ -1,22 +1,18 @@
 
 package com.arain.v2;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -47,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         animationDrawable.setExitFadeDuration(100000);
         animationDrawable.start();*/
 
+        /*Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);*/
 
         register = (TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
@@ -128,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                     if (user.isEmailVerified()) {
-                        //redirect to user profile
+                        //redirect to user status
                         startActivity(new Intent(MainActivity.this, UserStatus.class));
                     } else {
                         user.sendEmailVerification();

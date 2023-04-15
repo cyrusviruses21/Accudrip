@@ -19,62 +19,87 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/light"
-            >
+            android:background="@drawable/light">
 
             <Button
                 android:id="@+id/addSchedule"
                 android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/backgroundniba"
+                android:backgroundTint="#8df0c6"
+                android:fontFamily="@font/baloo"
                 android:text="add schedule"
                 android:textColor="@color/white"
                 android:textStyle="italic"
                 app:backgroundTint="@null"
-                android:backgroundTint="#8df0c6"
-                app:layout_constraintEnd_toEndOf="@+id/calendar"
-                app:layout_constraintHorizontal_bias="0.502"
-                app:layout_constraintStart_toStartOf="@+id/calendar"
-                app:layout_constraintTop_toBottomOf="@+id/calendar" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Accudrip"
-            android:textColor="@color/white"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.045" />
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
+                android:padding="10dp"
+                android:text="Accudrip"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.045" />
 
             <TextView
                 android:id="@+id/smart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
                 android:text="Drip and Monitor"
                 android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@+id/title"
                 app:layout_constraintStart_toStartOf="@+id/title"
-                app:layout_constraintTop_toBottomOf="@+id/title"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/title" />
 
-            <ImageView
-                android:id="@+id/calendar"
-                android:layout_width="409dp"
-                android:layout_height="338dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/smart"
-                app:layout_constraintHorizontal_bias="0.502"
-                app:layout_constraintStart_toStartOf="@+id/smart"
-                app:layout_constraintTop_toBottomOf="@+id/smart"
-                app:layout_constraintVertical_bias="0.181"
-                app:srcCompat="@drawable/calendar" />
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/smart" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="13dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="50dp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/baloo"
+                android:onClick="buttonSaveEvent"
+                android:text="SET"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/editText"
+                app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
@@ -83,6 +108,7 @@
         android:id="@+id/home"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
         android:background="@drawable/btn_background"
         android:text="HOME"
         android:textColor="#3b3939"

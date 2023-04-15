@@ -1,8 +1,5 @@
 package com.arain.v2;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -13,13 +10,16 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegisterUser extends AppCompatActivity implements View.OnClickListener{
+public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
     private TextView banner, alreadyHaveAnAccount;
     private EditText editTextFullname, editTextPhoneNumber, editTextEmail, editTextPassword;
@@ -27,7 +27,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private Button registerUser;
 
     private FirebaseAuth mAuth;
-
 
 
     @Override
@@ -55,10 +54,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
     @Override
     public void onClick(View view) {
-            switch (view.getId()){
+        switch (view.getId()) {
 
             case R.id.banner:
                 startActivity(new Intent(this, MainActivity.class));
@@ -68,62 +66,62 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                 registerUser();
                 break;
 
-                case R.id.alreadyHaveAnAccount:
-                    startActivity(new Intent(this, MainActivity.class));
-                    break;
+            case R.id.alreadyHaveAnAccount:
+                startActivity(new Intent(this, MainActivity.class));
+                break;
 
         }
     }
 
     private void registerUser() {
-        String email= editTextEmail.getText().toString().trim();
-        String password= editTextPassword.getText().toString().trim();
-        String fullName= editTextFullname.getText().toString().trim();
-        String phoneNumber= editTextPhoneNumber.getText().toString().trim();
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+        String fullName = editTextFullname.getText().toString().trim();
+        String phoneNumber = editTextPhoneNumber.getText().toString().trim();
 
-        if(fullName.isEmpty()){
+        if (fullName.isEmpty()) {
             editTextFullname.setError("Full name is required!");
             editTextFullname.requestFocus();
             return;
         }
-        if(phoneNumber.isEmpty()){
+        if (phoneNumber.isEmpty()) {
             editTextPhoneNumber.setError("Phone Number is required");
             editTextPhoneNumber.requestFocus();
             return;
         }
-        if(phoneNumber.length() != 11){
+        if (phoneNumber.length() != 11) {
             editTextPhoneNumber.setError("Valid Phone Number is required");
             editTextPhoneNumber.requestFocus();
             return;
         }
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             editTextEmail.setError("Email is required");
             editTextEmail.requestFocus();
             return;
         }
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             editTextEmail.setError("Please provide valid email!");
             editTextEmail.requestFocus();
             return;
         }
-        if(password.isEmpty()){
+        if (password.isEmpty()) {
             editTextPassword.setError("Password is required!");
             editTextPassword.requestFocus();
             return;
         }
-        if(password.length() < 6){
+        if (password.length() < 6) {
             editTextPassword.setError("Min password length is 6 characters!");
             editTextPassword.requestFocus();
             return;
         }
 
         progressBar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email,password)
+        mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             User user = new User(fullName, phoneNumber, email);
 
                             FirebaseDatabase.getInstance().getReference("Users")
@@ -132,7 +130,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
 
-                                            if(task.isSuccessful()){
+                                            if (task.isSuccessful()) {
                                                 Toast.makeText(RegisterUser.this, "Registered Successfully", Toast.LENGTH_LONG).show();
                                                 progressBar.setVisibility(View.GONE);
 
@@ -144,15 +142,14 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                                     }
                                                 });
 
-                                            }
-                                            else{
+                                            } else {
                                                 Toast.makeText(RegisterUser.this, "Failed to register, Try Again!", Toast.LENGTH_LONG).show();
                                                 progressBar.setVisibility(View.GONE);
                                             }
                                         }
                                     });
 
-                        }else{
+                        } else {
                             Toast.makeText(RegisterUser.this, "Failed to register", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }

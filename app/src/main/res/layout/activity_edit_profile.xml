@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/square"
-    tools:context=".UserSampleProfile">
+    tools:context=".edit_profile">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
-                android:text="Account Info"
+                android:text="Edit Account Info"
                 android:textColor="#000000"
                 android:textSize="25sp"
                 android:textStyle="bold"
@@ -81,6 +81,7 @@
                 android:layout_marginTop="15dp"
                 android:textColor="#000000"
                 android:textSize="17sp"
+                android:hint="yourname"
                 android:fontFamily="@font/baloo"
                 app:layout_constraintLeft_toLeftOf="@id/fullNameTitle"
                 app:layout_constraintTop_toBottomOf="@+id/fullNameTitle" />
@@ -112,6 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
+                android:hint="number"
                 android:textColor="#000000"
                 android:textSize="17sp"
                 android:fontFamily="@font/baloo"
@@ -145,6 +147,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
+                android:hint="email"
                 android:textColor="#000000"
                 android:textSize="17sp"
                 android:fontFamily="@font/baloo"
@@ -166,7 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#008f8c8c"
-                android:paddingTop="5dp"
+                android:paddingTop="0dp"
                 app:layout_constraintEnd_toEndOf="@id/nameDisplay"
                 app:layout_constraintStart_toStartOf="@id/nameDisplay"
                 app:layout_constraintTop_toBottomOf="@id/nameDisplay"
@@ -181,7 +184,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_background"
-        android:text="LOGOUT"
+        android:text="save"
         android:textColor="#3b3939"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
