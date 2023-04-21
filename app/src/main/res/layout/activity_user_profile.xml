@@ -10,7 +10,7 @@
     tools:context=".UserProfile"
     tools:openDrawer="">
 
-     <com.google.android.material.navigation.NavigationView
+    <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -87,98 +87,59 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
+
+                        <ScrollView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <TextView
-                                android:id="@+id/contents"
+                            <TableLayout
+                                android:id="@+id/tableLayout"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:scrollbars="vertical"
-                                android:text=""
-                                android:textColor="@color/black"
-                                android:textColorLink="#0000FF"
-                                android:textSize="14dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="1.0"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="1.0"
-                                android:background="@color/white"/>
+                                android:stretchColumns="*">
 
-                            <TextView
-                                android:id="@+id/textView9"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/baloo"
-                                android:text=" DATE        STATUS        START        STOP        STATUS "
-                                android:textColor="@color/black"
-                                android:textSize="15dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintRight_toRightOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.107" />
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="#d81159"
+                                    android:padding="16dp">
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@android:color/darker_gray"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.0"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.167" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/baloo"
+                                        android:text="Date"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="300dp"
-                                android:background="@android:color/darker_gray"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.19"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="1.0" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/baloo"
+                                        android:text="Time"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="300dp"
-                                android:background="@android:color/darker_gray"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.603"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="1.0" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/baloo"
+                                        android:text="Duration"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="300dp"
-                                android:background="@android:color/darker_gray"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.778"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="1.0" />
+                                </TableRow>
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="300dp"
-                                android:background="@android:color/darker_gray"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.398"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="1.0" />
+                            </TableLayout>
 
+                        </ScrollView>
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>

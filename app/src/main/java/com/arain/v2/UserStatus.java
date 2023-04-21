@@ -172,8 +172,6 @@ public class UserStatus extends AppCompatActivity implements View.OnClickListene
                 startActivity(new Intent(this, UserStatus.class));
                 break;
             case R.id.manualIrrigateIcon:
-                startActivity(new Intent(this, manual_irrigation.class));
-                break;
             case R.id.manualIrrigate:
                 startActivity(new Intent(this, manual_irrigation.class));
                 break;

@@ -8,7 +8,7 @@
     android:background="@drawable/light"
     android:fitsSystemWindows="true"
     tools:context=".UserStatus"
-    tools:openDrawer="">
+    tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"

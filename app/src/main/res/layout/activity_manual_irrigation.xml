@@ -25,7 +25,7 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="0dp"
                 android:layout_height="300dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal"
                 android:padding="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -77,6 +77,12 @@
                             android:layout_centerVertical="false"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/waterlevel1" />
+
+                        <Button
+                            android:id="@+id/sched"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SET SCHED"/>
 
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
@@ -138,7 +144,8 @@
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                />
 
             <TextView
                 android:id="@+id/waterPumpLabel"
@@ -152,14 +159,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switchPump" />
 
-            <Button
-                android:id="@+id/sampol"
+            <EditText
+                android:id="@+id/editTextDuration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/schedule_irrigate"
+                android:hint="Timer (Seconds)"
+                android:textColorHint="#8f8c8c"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/waterPumpLabel" />
+
+            <Button
+                android:id="@+id/buttonStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextDuration"
+                android:background="@drawable/backgroundniba"
+                android:backgroundTint="#8df0c6"
+                app:backgroundTint="@null"
+                android:fontFamily="@font/baloo"/>
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

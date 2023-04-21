@@ -16,26 +16,30 @@
         app:layout_constraintBottom_toTopOf="@+id/home"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/light">
 
-            <Button
-                android:id="@+id/addSchedule"
-                android:layout_width="200dp"
+            <Switch
+                android:id="@+id/switchPump"
+                android:layout_width="150dp"
                 android:layout_height="0dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="40dp"
                 android:background="@drawable/backgroundniba"
-                android:backgroundTint="#8df0c6"
+                android:backgroundTint="#d81159"
                 android:fontFamily="@font/baloo"
-                android:text="add schedule"
+                android:text="OFF"
+                android:paddingLeft="30dp"
+                android:textSize="25sp"
                 android:textColor="@color/white"
                 android:textStyle="italic"
                 app:backgroundTint="@null"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextDuration"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <TextView
                 android:id="@+id/title"
@@ -64,42 +68,33 @@
                 app:layout_constraintStart_toStartOf="@+id/title"
                 app:layout_constraintTop_toBottomOf="@+id/title" />
 
-            <CalendarView
-                android:id="@+id/calendarView"
+            <Button
+                android:id="@+id/setTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginTop="70dp"
+                android:text="Select Time"
+                android:backgroundTint="#fbb13c"
+                app:backgroundTint="@null"
+                android:background="@drawable/backgroundniba"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/smart" />
 
             <EditText
-                android:id="@+id/editText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
+                android:id="@+id/editTextDuration"
+                android:layout_width="203dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="13dp"
                 android:ems="10"
+                android:hint="SET DURATION (in seconds)"
                 android:inputType="textPersonName"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/calendarView" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="50dp"
-                android:backgroundTint="@color/white"
-                android:fontFamily="@font/baloo"
-                android:onClick="buttonSaveEvent"
-                android:text="SET"
-                android:textColor="@color/black"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/editText"
-                app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setTime" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

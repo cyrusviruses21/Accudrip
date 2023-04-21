@@ -1,13 +1,15 @@
 package com.arain.v2;
 
-public class Schedule {
+public class Pump {
     private String date;
     private String time;
-    private String duration;
+    private int duration;
 
-    public Schedule() {}
+    public Pump() {
+        // Empty constructor required for Firebase
+    }
 
-    public Schedule(String date, String time, String duration) {
+    public Pump(String date, String time, int duration) {
         this.date = date;
         this.time = time;
         this.duration = duration;
@@ -29,16 +31,11 @@ public class Schedule {
         this.time = time;
     }
 
-    public String getDuration() {
+    public int getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 }
-
-
-
-
-
